@@ -25,7 +25,7 @@
 
 (define (update-byte! env func)
   (let ([memory (env-memory env)])
-    (set-mem-byte! memory (modulo (func (mem-byte memory)) 256))))
+    (set-mem-byte! memory (func (mem-byte memory)))))
 
 (define (pad upto how)
   (lambda (str)
@@ -66,7 +66,7 @@
      [(#\-) (update-byte! env sub1)]
      [(#\() (decrease-pointer env)]
      [(#\)) (increase-pointer env)]
-     [(#\.) (write-byte (mem-byte (env-memory env)) (current-output-port))]
+     [(#\.) (write-byte (mem-byte (env-memory env))) (flush-output)]
      [(#\:) (write-string (format "~a" (mem-byte (env-memory env))) (current-output-port))]
      [(#\,) (set-mem-byte! (env-memory env) (read-byte (current-input-port)))]
      [(#\;) (set-mem-byte! (env-memory env) (read (current-input-port)))]
