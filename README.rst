@@ -20,5 +20,12 @@ After you install the mario package, you can run MarioLANG programs with Racket:
 
    racket 99bottles.rkt
 
+Other implementations
+---------------------
+
+There is also a `C++ implementation`_ and a `Ruby implementation`_ of
+MarioLANG_ on GitHub.
 
 .. _MarioLANG: https://esolangs.org/wiki/MarioLANG
+.. _`C++ implementation`: https://github.com/tomsmeding/MarioLANG
+.. _`Ruby implementation`: https://github.com/mynery/mariolang.rb
