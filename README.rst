@@ -9,7 +9,7 @@ Install
 
 .. code-block:: shell
 
-   raco pkg install https://github.com/mlang/mario.git
+   raco pkg install mario
 
 Running MarioLANG programs
 ==========================
